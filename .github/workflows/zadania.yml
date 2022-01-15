@@ -36,15 +36,16 @@ jobs:
         name: Run Buildx Single Arch
         run: |
           docker buildx build \
-             
             --output "type=image,push=true" \
-            --file ./dockerfile.v1 \
-            --tag beyondoblivion/project2:zadanie1
+            --tag beyondoblivion/project2:zadanie1 \
+            --file ./dockerfile.v1  ./ 
+            
       -
         name: Run Buildx Multi Arch
         run: |
           docker buildx build \
             --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7 \
             --output "type=image,push=true" \
-            --file ./dockerfile.v1 \
-            --tag beyondoblivion/project2:zadanie2
+            --tag beyondoblivion/project2:zadanie2 \
+            --file ./dockerfile.v1  ./
+            
