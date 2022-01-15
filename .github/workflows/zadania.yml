@@ -31,7 +31,7 @@ jobs:
         uses: docker/login-action@v1
         with:
               username: ${{secrets.DOCKER_HUB_USER}}
-              password: ${{secrets.DOCKER_HUB_TOKEN}}
+              password: ${{secrets.DOCKER_HUB_TOKEN} }
       -
         name: Run Buildx Single Arch
         run: |
